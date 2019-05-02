@@ -89,7 +89,9 @@ class ExpressivePage extends AbstractPage
         }
 
         // Set route result
-        $this->urlHelper->setRouteResult($this->routeResult);
+        if ($this->routeResult){
+            $this->urlHelper->setRouteResult($this->routeResult);
+        }
 
         // Generate URL
         return $this->hrefCache = $this->urlHelper->generate(
